@@ -1,8 +1,5 @@
 # Inconfluential
 
-> [!WARNING]
-> This repository is being pushed to my github before I have confirmed permissions to use a portion of the code from `LukeLD/gitfluence`.This revision should not be considered available for general use, and does not have a license associated with it. `LICENSE.md` is provided all other code with excluding LukeLD's `AtlassianConverter()` class.
-
 Inconfluential is a Python script designed to export pages from one or more Atlassian Confluence spaces into Markdown files. It organizes these files into a directory structure and maintains a Git repository to track changes over time. This allows for easy version control, offline access, and integration with other tools that consume Markdown files.
 
 ## Features
@@ -27,7 +24,7 @@ Inconfluential is a Python script designed to export pages from one or more Atla
 
 ## Prerequisites
 
-- **Python 3.6+**: The script is compatible with Python version 3.6 and above.
+- **Python 3.13+**: The script is compatible with Python version 3.13 and above.
 - **Atlassian Confluence**: Access to one or more Confluence spaces with API credentials.
 - **Git**: Git should be installed on your system to enable version control features.
 - **Poetry**: Used for dependency management and packaging.
@@ -145,12 +142,6 @@ poetry run python inconfluential.py
 
 - **[Atlassian Python API](https://atlassian-python-api.readthedocs.io/)**: For providing a convenient way to interact with Confluence.
 
-- **[Markdownify](https://github.com/matthewwithanm/python-markdownify)**: For converting HTML content to Markdown.
-
-- **[TQDM](https://github.com/tqdm/tqdm)**: For progress bars.
-
-- **[Python Dotenv](https://github.com/theskumar/python-dotenv)**: For loading environment variables from a `.env` file.
-
 ## Contributing
 
 Contributions are welcome! Please follow these steps:
@@ -185,9 +176,7 @@ Contributions are welcome! Please follow these steps:
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Troubleshooting
+This project is licensed under the GNU Affero General Public License (v3).
 
 ### **Common Issues**
 

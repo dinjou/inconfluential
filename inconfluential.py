@@ -113,7 +113,10 @@ def fetch_pages_and_save(confluence, space, destination, git_root, batch_size=10
                                     "Last Updated": timestamp
                                 }
 
-                                markdown = (str(author_data))+"\n"+AtlassianConverter().convert(page_data['body']['storage']['value'])
+                                page_as_markdown = AtlassianConverter().convert(page_data['body']['storage']['value'])
+                                metadata_as_markdown = md(str(author_data).replace('{','Metadata: ').replace('}',""))
+                                markdown = f"{page_as_markdown}\n\n{metadata_as_markdown}"
+
                                 filename = os.path.join(destination, f"{page_title.replace('/', '_')}.md")
                                 logging.info(f"\tPage: \'{page_title}\' converted to markdown. Writing...")
 
@@ -190,7 +193,7 @@ def write_if_changed(filename, new_content):
                 return False  # No update necessary
 
         # If the file doesn't exist or content has changed, write new content
-        with open(filename, 'w') as f:
+        with open(filename, 'w', encoding='utf-8') as f:
             f.write(new_content)
         logging.info(f"\tGit: Changes detected; \'{filename}\' has been updated.")
         return True  # File was written/updated
