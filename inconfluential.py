@@ -9,6 +9,7 @@ from atlassian import Confluence
 from atlassian.errors import ApiError
 from dotenv import load_dotenv
 from markdownify import MarkdownConverter
+from markdownify import markdownify as md
 from tqdm import tqdm
 
 
